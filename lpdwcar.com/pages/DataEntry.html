@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPDWCar - Saisie de session</title>
+    <link rel="stylesheet" href="../css/main-layout.css" />
+    <link rel="stylesheet" href="../css/data-entry.css" />
+    <link rel="stylesheet" href="../css/with-icons.css" />
+    <script type="module" src="../js/dataEntry.js"></script>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>LPDWCar</h1>
+        <p>Saisie d'une nouvelle session de conduite</p>
+      </hgroup>
+    </header>
+    <main>
+      <input type="hidden" id="sessionId" name="id" value="" />
+      <form action="" id="sessionForm">
+        <section id="sessionMainInfos">
+          <h2 class="form__heading">Général</h2>
+          <fieldset class="main-fieldset">
+            <h3 class="form__heading">Date du trajet</h3>
+            <label for="setDateTimeStart">Début</label>
+            <input type="datetime-local" name="start_datetime" id="setDateTimeStart" required />
+            <label for="setDateTimeStop">Fin</label>
+            <input type="datetime-local" name="stop_datetime" id="setDateTimeStop" required />
+            <h3 class="form__heading">Parcours</h3>
+            <label for="travelDistance">Distance parcourue :</label>
+            <input
+              type="number"
+              id="travelDistance"
+              name="travel_distance"
+              required />
+            <br />
+            <label for="departureCoordinates">Position de départ :</label>
+            <input
+              type="text"
+              id="departureCoordinates"
+              name="start_coords"
+              placeholder="Adresse ou coordonnées"
+              title="Veuillez saisir une adresse ou des coordonnées GPS"
+              data-source="navigator"
+              class="pac-target-input"
+              autocomplete="off"
+              data-lat=""
+              data-lng="" />
+            <button type="button" id="getDeparturePositionButton">Obtenir les coordonnées de départ</button>
+            <br />
+            <label for="destinationCoordinates">Position d'arrivée :</label>
+            <input
+              type="text"
+              id="destinationCoordinates"
+              name="stop_coords"
+              placeholder="Adresse ou coordonnées"
+              title="Veuillez saisir une adresse ou des coordonnées GPS"
+              data-source="navigator"
+              class="pac-target-input"
+              autocomplete="off"
+              data-lat=""
+              data-lng="" />
+            <button type="button" id="getDestinationPositionButton">Obtenir les coordonnées d'arrivée</button>
+            <button type="button" id="calculateBtn">Calcul de l'itinéraire</button>
+          </fieldset>
+        </section>
+        <section id="conditionsInfos">
+          <h2 class="form__heading">Conditions de conduite</h2>
+          <fieldset id="conditionsContainer" class="conditions-fieldset" >
+            <h3 class="form__heading">Conduite de nuit</h3>
+            <input type="checkbox" name="nighttime" id="nightDriving" />
+          </fieldset>
+        </section>
+      </form>
+      <button type="button" id="submitFormButton">Enregistrer</button>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">Page d'accueil</a>
+          </li>
+          <li>
+            <a href="SessionsOverview.html">Voir les sessions enregistrées</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <div id="sessionModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2></h2>
+        <p id=""></p>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+    </div>
+  </body>
+</html>

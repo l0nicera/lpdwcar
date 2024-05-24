@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPDWCar - Historique des trajets</title>
+    <link rel="stylesheet" href="../css/main-layout.css" />
+    <link rel="stylesheet" href="../css/session-table.css" />
+    <script type="module" src="../js/sessionsOverview.js"></script>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>LPDWCar</h1>
+        <p>Historique des trajets</p>
+      </hgroup>
+    </header>
+    <main>
+      <table id="sessionsTable">
+        <thead>
+          <th>Date</th>
+          <th>Heure début</th>
+          <th>Heure de fin</th>
+          <th>Durée</th>
+          <th>Distance parcourue</th>
+          <th>Nocturne</th>
+          <th>Météo</th>
+          <th>Dangers</th>
+          <th>Manœuvres</th>
+          <th>Stationnement</th>
+          <th>Type de route</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">Page d'accueil</a>
+          </li>
+          <li>
+            <a href="./DataStats.html">Statistiques</a>
+          </li>
+          <li>
+            <a href="DataEntry.html">Saisir une nouvelle session</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <div id="sessionOvwModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2></h2>
+        <p id=""></p>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+    </div>
+  </body>
+</html>

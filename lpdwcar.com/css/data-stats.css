@@ -1,0 +1,19 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#baseData {
+  padding-bottom: 2rem;
+}
+
+h4 {
+  text-align: center;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

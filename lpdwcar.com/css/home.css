@@ -1,0 +1,60 @@
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#sessionControlBtn {
+  padding: 150px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#sessionControlBtn.start {
+  background-color: #28a745;
+}
+
+#sessionControlBtn.stop {
+  background-color: #dc3545;
+}
+
+#sessionControlBtn:hover {
+  filter: brightness(85%);
+}
+
+#timerDisplay {
+  display: flex;
+  flex-direction: column;
+}
+
+#chartContainer {
+  position: absolute;
+  width: 500px;
+  height: 580px;
+  z-index: -1;
+}
+
+#progressChart {
+  padding: 0;
+  margin: 0;
+}
+
+#totalDistanceCovered {
+  font-size: 26px;
+  color: #36a2eb;
+  font-weight: bold;
+  text-align: center;
+}

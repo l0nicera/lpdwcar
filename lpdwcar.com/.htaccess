@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Réécrire les appels API vers le sous-domaine de l'API
+    RewriteRule ^api/(.*)$ http://api.lpdwcar.com.taye8944.odns.fr/$1 [P,L]
+
+    # RewriteRule ^(.*)$ index.html [L]
+</IfModule>

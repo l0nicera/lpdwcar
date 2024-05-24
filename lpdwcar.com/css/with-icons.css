@@ -1,0 +1,18 @@
+/* Date du trajet : icones */
+.date-select.sub-fieldset > label::before {
+    content:"";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+/* Icone : sifflet de départ */
+.date-select--start > label::before {
+    background: center / cover no-repeat url('../images/picto-start.svg');
+}
+
+/* Icone : drapeau d'arrivée */
+.date-select--end > label::before {
+    background: center / cover no-repeat url('../images/picto-end.svg');
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPDWCar - Accueil</title>
+    <link rel="stylesheet" href="./css/main-layout.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module">
+      import { bootstrapApplication } from './js/appInit.js';
+      bootstrapApplication();
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>LPDWCar</h1>
+        <p>La conduite accompagnée des développeurs web</p>
+      </hgroup>
+    </header>
+    <main>
+      <div id="chartContainer">
+        <canvas id="progressChart"></canvas>
+        <p id="totalDistanceCovered" hidden>Test</p>
+      </div>
+
+      <button type="button" id="sessionControlBtn" class="start">
+        Démarrer
+      </button>
+      <div id="timerDisplay" style="display: none">
+        <p>Temps écoulé : <span id="timeElapsed">00:00:00</span></p>
+        <p>Distance parcourue : <span id="distanceCovered">0 km</span></p>
+      </div>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="./pages/DataEntry.html">Commencer une saisie manuelle</a>
+          </li>
+          <li>
+            <a href="./pages/SessionsOverview.html">Voir les sessions enregistrées</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <div id="homePageModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Informations de Session</h2>
+        <p id="sessionInfo">Details de la session...</p>
+        <a id="dataEntryLink" href="">Poursuivre la saisie</a>
+        <a id="sessionDetailsLink" href="">Visualiser le trajet</a>
+      </div>
+    </div>
+  </body>
+</html>

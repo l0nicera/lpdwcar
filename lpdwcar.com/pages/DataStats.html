@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPDWCar - Statistiques</title>
+    <link rel="stylesheet" href="../css/main-layout.css" />
+    <link rel="stylesheet" href="../css/data-stats.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>LPDWCar</h1>
+        <p>Statisques des trajets</p>
+      </hgroup>
+    </header>
+    <main id="dataStatContent">
+      <article>
+        <header>
+          <h4>Retrouver ici l'analyse de toutes les données enregistrée</h4>
+        </header>
+        <!-- pas inspiré pour le nom -->
+        <section id="baseData" class="main-content">
+          <!-- Nombre de trajets effectués  -->
+          <div id="totalSessionContainer" class="data-container">
+            <img src="" alt="" id="totalSessionImg" />
+            <p id="totalSessionLabel">Nombre de session enregistrée</p>
+            <p id="totalSessionStat"></p>
+          </div>
+          <!-- Distance  -->
+
+          <h4>Distance</h4>
+          <div id="distanceStats" class="data-container">
+            <div id="totalDistanceContainer">
+              <img src="" alt="" id="totalDistanceImg" />
+              <p id="totalDistanceLabel">Distance totale</p>
+              <p id="totalDistanceStat"></p>
+            </div>
+            <div id="maxDistanceContainer">
+              <img src="" alt="" id="maxDistanceImg" />
+              <p id="maxDistanceLabel">Distance la plus longue</p>
+              <p id="maxDistanceStat"></p>
+            </div>
+            <div id="minDistanceContainer">
+              <img src="" alt="" id="minDistanceImg" />
+              <p id="minDistanceLabel">Distance la plus courte</p>
+              <p id="minDistanceStat"></p>
+            </div>
+            <div id="aveDistanceContainer">
+              <img src="" alt="" id="aveDistanceImg" />
+              <p id="aveDistanceLabel">Distance moyenne</p>
+              <p id="aveDistanceStat"></p>
+            </div>
+          </div>
+          <h4>Durée</h4>
+          <div id="durationStats" class="data-container">
+            <div id="totalDurationContainer">
+              <img src="" alt="" id="totalDurationImg" />
+              <p id="totalDurationLabel">Durée totale</p>
+              <p id="totalDurationStat"></p>
+            </div>
+            <div id="maxDurationContainer">
+              <img src="" alt="" id="maxDurationImg" />
+              <p id="maxDurationLabel">Durée la plus longue</p>
+              <p id="maxDurationStat"></p>
+            </div>
+            <div id="minDurationContainer">
+              <img src="" alt="" id="minDurationImg" />
+              <p id="minDurationLabel">Durée la plus courte</p>
+              <p id="minDurationStat"></p>
+            </div>
+            <div id="aveDurationContainer">
+              <img src="" alt="" id="aveDurationImg" />
+              <p id="aveDurationLabel">Durée moyenne</p>
+              <p id="aveDurationStat"></p>
+            </div>
+          </div>
+        </section>
+        <section id="conditionData" class="main-content">
+          <div id="nighttimeContainer">
+            <h4>Conduite de nuit</h4>
+            <div class="data-container">
+              <div class="data-item">
+                <p id="nighttimeStat"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">Page d'accueil</a>
+          </li>
+          <li>
+            <a href="./SessionsOverview.html">Voir les sessions enregistrée</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <div id="dataStatsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2></h2>
+        <p id=""></p>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+    </div>
+    <script type="module" src="../js/dataStats.js"></script>
+  </body>
+</html>

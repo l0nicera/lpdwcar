@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPDWCar - Détails de session</title>
+    <link rel="stylesheet" href="../css/main-layout.css" />
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>LPDWCar</h1>
+        <p>Détails de la session</p>
+      </hgroup>
+    </header>
+    <main>
+      <section
+        id="routeMap"
+        style="height: 400px; width: 400px"
+        hidden
+      ></section>
+      <section id="sessionDetails">
+        <h3>Informations sur le trajet</h3>
+      </section>
+      <section id="conditionsDetails"></section>
+      <a href="" id="editSessionLink">Modifier</a>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">Page d'accueil</a>
+          </li>
+          <li>
+            <a id="addInfosLink" href=""
+              >Ajouter des informations sur le trajet</a
+            >
+          </li>
+          <li>
+            <a href="SessionsOverview.html">Voir les sessions enregistrées</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <div id="sessionDetailsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2></h2>
+        <p id=""></p>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+    </div>
+    <script type="module" src="../js/sessionDetails.js"></script>
+  </body>
+</html>

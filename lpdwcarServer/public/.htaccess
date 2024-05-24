@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Exclure les requêtes pour les fichiers spécifiques
+    RewriteCond %{REQUEST_URI} !^/favicon.ico$
+    RewriteCond %{REQUEST_URI} !^/robots.txt$
+    RewriteCond %{REQUEST_URI} !^/sitemap.xml$
+
+    # Exclure les requêtes pour les fichiers et dossiers existants
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Réécrire toutes les autres requêtes vers index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
