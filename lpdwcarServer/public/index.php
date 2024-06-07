@@ -20,9 +20,9 @@ require_once __DIR__ . '/../src/Infrastructure/Repository/ManeuverRepository.php
 require_once __DIR__ . '/../src/Infrastructure/Repository/ParkingRepository.php';
 require_once __DIR__ . '/../src/Infrastructure/Repository/RoadTypeRepository.php';
 require_once __DIR__ . '/../src/Services/SessionValidator.php';
+require_once __DIR__ . '/../src/Core/Response.php';
 
-
-
+use App\Core\Response;
 use App\Controllers\ConditionController;
 use App\Controllers\SessionController;
 use App\Controllers\TranslationController;
@@ -72,7 +72,8 @@ if ($requestUri == 'session/save') {
 }
 //***** Condition routes *****//
 elseif ($requestUri == 'conditions/all') {
-    $conditionController->getAllConditions();
+    // Là j'appelle mon render puisque je récupère un object de type Response ;)
+    $conditionController->getAllConditions()->render();
 } elseif ($requestUri == 'translations/all') {
     $translationController->getAllTranslations();
 }
@@ -81,7 +82,9 @@ elseif (preg_match('/^translations\/(\w+)$/', $requestUri, $matches)) {
 }
 
 else {
-    http_response_code(404);
-    echo 'Not found';
+    Response::notFound()->render();
 }
+
+// Et si tu renvoie des Response de partout, tu as juste à stocker 
+// la Response dans une var, et à la fin faire un $resp->render()
 

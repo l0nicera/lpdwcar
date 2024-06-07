@@ -8,6 +8,7 @@ require_once __DIR__ . '/../Infrastructure/Repository/ManeuverRepository.php';
 require_once __DIR__ . '/../Infrastructure/Repository/ParkingRepository.php';
 require_once __DIR__ . '/../Infrastructure/Repository/RoadTypeRepository.php';
 
+use App\Core\Response;
 use App\Infrastructure\Repository\HazardRepository;
 use App\Infrastructure\Repository\ManeuverRepository;
 use App\Infrastructure\Repository\ParkingRepository;
@@ -37,7 +38,7 @@ class ConditionController {
         $this->parkingRepository = $parkingRepository;
         $this->roadTypeRepository = $roadTypeRepository;
     }
-    public function getAllConditions(): void {
+    public function getAllConditions(): Response {
         header('Content-Type: application/json');
         try {
             $conditions = [
@@ -47,7 +48,14 @@ class ConditionController {
                 'parkings' => $this->parkingRepository->getAll(),
                 'roadtypes' => $this->roadTypeRepository->getAll()
             ];
-            $this->sendJsonResponse(200, ['status' => 'success', 'text' => 'All conditions fetched successfully.'], $conditions);
+            // $this->sendJsonResponse(200, ['status' => 'success', 'text' => 'All conditions fetched successfully.'], $conditions);
+            $outputData = [
+                'status' => 'success',
+                'text' => 'All conditions fetched successfully.',
+                'data' => $conditions
+            ];
+            // Là je retourne ma reponse
+            return Response::json(200, $outputData);
         } catch (PDOException $e) {
             error_log("PDOException on getAllConditions: " . $e->getMessage());
             $this->sendJsonResponse(500, ['status' => 'error', 'text' => 'Database error occurred while fetching all conditions.']);
